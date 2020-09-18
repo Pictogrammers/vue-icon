@@ -4,7 +4,7 @@ import VueIcon from './../lib/icon.vue'
 
 const path = 'M 10 10 H 90 V 90 H 10 L 10 10'
 
-describe('VueMdi component', () => {
+describe('Vue icon', () => {
 	let component
 
 	beforeEach(() => {
@@ -16,54 +16,67 @@ describe('VueMdi component', () => {
 	})
 
 	it('renders an svg with path element', () => {
-		//  Checking for the existence of an svg tag
 		expect(component.html()).toContain('svg')
+		expect(component.find('path').attributes('d')).toBe(path)
+	})
 
-		//  Cheking for rendering path element
-		const pathEl = component.find('path')
-
-		expect(pathEl.attributes('d')).toBe(path)
+	it("has the 'icon' class", () => {
+		expect(component.classes()).toContain('icon')
 	})
 
 	it("accepts a 'title' property", async () => {
 		await component.setProps({ title: 'foo' })
 
-		//  Cheking for rendering of the aria-labelledby attribute
-		//expect(component.attributes()['aria-labelledby']).toMatch('icon_labelledby')
-
-		//  Cheking for rendering title
-		const title = component.find('title')
-
-		expect(title.text()).toEqual('foo')
+		expect(component.find('title').text()).toEqual('foo')
 	})
 
 	it("accepts a 'description' property", async () => {
 		await component.setProps({ title: 'foo', description: 'bar' })
 
-		//  Cheking for rendering of the aria-labelledby attribute
-		//expect(component.attributes()['aria-labelledby']).toMatch('icon_labelledby').toMatch('icon_describedby')
-
-		//  Cheking for rendering description
-		const description = component.find('desc')
-
-		expect(description.text()).toEqual('bar')
+		expect(component.find('desc').text()).toEqual('bar')
 	})
 
 	it("accepts a 'size' property", async () => {
 		await component.setProps({ path, size: 2 })
 
-		//  Checking the styles width and height properties of the svg element
 		expect(component.attributes().height).toBe('2')
 		expect(component.attributes().width).toBe('2')
 		expect(component.attributes().viewBox).toBe('0 0 2 2')
 	})
 
+	it("accepts a 'flip' property", async () => {
+		await component.setProps({ path, flip: 'none' })
+
+		expect(component.classes('flip-horizontal')).toBe(false)
+		expect(component.classes('flip-vertical')).toBe(false)
+
+		await component.setProps({ path, flip: 'both' })
+
+		expect(component.classes('flip-horizontal')).toBe(true)
+		expect(component.classes('flip-vertical')).toBe(true)
+
+		await component.setProps({ path, flip: 'horizontal' })
+
+		expect(component.classes('flip-horizontal')).toBe(true)
+		expect(component.classes('flip-vertical')).toBe(false)
+
+		await component.setProps({ path, flip: 'vertical' })
+
+		expect(component.classes('flip-horizontal')).toBe(false)
+		expect(component.classes('flip-vertical')).toBe(true)
+	})
+
+	it("accepts a 'rotate' property", async () => {
+		await component.setProps({ path, rotate: 90 })
+
+		const styles = getComputedStyle(component.element)
+
+		expect(styles.getPropertyValue('--rotation')).toBe('90deg')
+	})
+
 	it("accepts a 'color' property", async () => {
 		await component.setProps({ path, color: '#888' })
 
-		//  Checking the fill property of the path element
-		const path = component.find('path')
-
-		expect(path.attributes()['fill']).toEqual('#888')
+		expect(component.find('path').attributes()['fill']).toEqual('#888')
 	})
 })

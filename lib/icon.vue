@@ -18,7 +18,7 @@ export default {
     flip: {
       type: String,
       validator: () =>
-        ["horizontal", "vertical", "both", "none"].indexOf(value) !== -1,
+        ["horizontal", "vertical", "both", "none"].includes(value),
     },
     rotate: { type: Number, default: 0 },
     color: { type: String, default: "black" },
@@ -29,8 +29,8 @@ export default {
     classes() {
       return {
         icon: true,
-        flipHorizontal: ["horizontal", "both"].includes(this.flip),
-        flipVertical: ["vertical", "both"].includes(this.flip),
+        "flip-horizontal": ["horizontal", "both"].includes(this.flip),
+        "flip-vertical": ["vertical", "both"].includes(this.flip),
       };
     },
 
