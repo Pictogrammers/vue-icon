@@ -69,14 +69,24 @@ describe('Vue icon', () => {
 	it("accepts a 'rotate' property", async () => {
 		await component.setProps({ path, rotate: 90 })
 
-		const styles = getComputedStyle(component.element)
-
-		expect(styles.getPropertyValue('--rotation')).toBe('90deg')
+		expect(getComputedStyle(component.element).getPropertyValue('--rotation')).toBe('90deg')
 	})
 
 	it("accepts a 'color' property", async () => {
 		await component.setProps({ path, color: '#888' })
 
 		expect(component.find('path').attributes()['fill']).toEqual('#888')
+	})
+
+	it("accepts a 'spin' property", async () => {
+		await component.setProps({ path, spin: '2' })
+
+		expect(getComputedStyle(component.element).getPropertyValue('--spin-direction')).toBe('normal')
+		expect(getComputedStyle(component.element).getPropertyValue('--spin-duration')).toBe('500ms')
+
+		await component.setProps({ path, spin: '-8' })
+
+		expect(getComputedStyle(component.element).getPropertyValue('--spin-direction')).toBe('reverse')
+		expect(getComputedStyle(component.element).getPropertyValue('--spin-duration')).toBe('125ms')
 	})
 })

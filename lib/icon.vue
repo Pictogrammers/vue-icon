@@ -22,13 +22,14 @@ export default {
     },
     rotate: { type: Number, default: 0 },
     color: { type: String, default: "black" },
-    spin: [Boolean, Number],
+    spin: Number,
   },
 
   computed: {
     classes() {
       return {
         icon: true,
+        spin: this.spin,
         "flip-horizontal": ["horizontal", "both"].includes(this.flip),
         "flip-vertical": ["vertical", "both"].includes(this.flip),
       };
@@ -37,6 +38,8 @@ export default {
     styles() {
       return {
         "--rotation": this.rotate + "deg",
+        "--spin-duration": 1000 / Math.abs(this.spin) + "ms",
+        "--spin-direction": this.spin > 0 ? "normal" : "reverse",
       };
     },
 
@@ -48,9 +51,25 @@ export default {
 </script>
 
 <style scoped>
+@keyframes spin {
+  from {
+    --rotation: 0deg;
+  }
+  to {
+    --rotation: 360deg;
+  }
+}
+
 .icon {
   transform: translate(var(--scale-x, 1), var(--scale-y, 1))
     rotate(var(--rotation));
+}
+
+.spin {
+  animation-name: spin;
+  animation-direction: var(--spin-direction, normal);
+  animation-duration: var(--spin-duration, 2s);
+  animation-iteration-count: infinite;
 }
 
 .flip-horizontal {
