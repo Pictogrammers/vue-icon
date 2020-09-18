@@ -20,7 +20,7 @@ export default {
       validator: () =>
         ["horizontal", "vertical", "both", "none"].indexOf(value) !== -1,
     },
-    rotate: Number,
+    rotate: { type: Number, default: 0 },
     color: { type: String, default: "black" },
     spin: [Boolean, Number],
   },
