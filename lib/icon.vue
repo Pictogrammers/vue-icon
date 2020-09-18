@@ -1,5 +1,5 @@
 <template>
-  <svg :width="size" :height="size" :viewBox="viewbox" :class="classes" :style="styles">
+  <svg :width="size" :height="size" viewBox="0 0 24 24" :class="classes" :style="styles">
     <title v-if="title">{{ title }}</title>
     <desc v-if="description">{{ description }}</desc>
     <path :d="path" :fill="color" />
@@ -17,8 +17,7 @@ export default {
     size: { type: Number, default: 24 },
     flip: {
       type: String,
-      validator: () =>
-        ["horizontal", "vertical", "both", "none"].includes(value),
+      validator: () => ["horizontal", "vertical", "both"].includes(value),
     },
     rotate: { type: Number, default: 0 },
     color: { type: String, default: "black" },
@@ -44,7 +43,7 @@ export default {
     },
 
     viewbox() {
-      return `0 0 ${this.size} ${this.size}`;
+      return `0 0 ${this.viewboxSize} ${this.viewboxSize}`;
     },
   },
 };

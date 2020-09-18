@@ -41,7 +41,6 @@ describe('Vue icon', () => {
 
 		expect(component.attributes().height).toBe('2')
 		expect(component.attributes().width).toBe('2')
-		expect(component.attributes().viewBox).toBe('0 0 2 2')
 	})
 
 	it("accepts a 'flip' property", async () => {
