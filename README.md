@@ -1,3 +1,5 @@
+Consider using the [webcomponent version](https://github.com/JamesCoyle/svg-icon) of this component for an icon component that can be used in any modern browser with any framework.
+
 # Vue Icon Component
 
 [![](https://chips.james-coyle.now.sh/npm/version/@jamescoyle/vue-icon)](https://www.npmjs.com/package/@jamescoyle/vue-icon)
