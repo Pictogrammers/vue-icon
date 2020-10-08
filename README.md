@@ -8,12 +8,12 @@ The following example uses [@mdi/js](https://www.npmjs.com/package/@mdi/js) whic
 
 ```
 <template>
-  <svg-icon :path="path" :size="48" color="red"></svg-icon>
+  <svg-icon type="mdi" :path="path" :size="48"></svg-icon>
 </template>
 
 
 <script>
-import SvgIcon from '[path-to-package]'
+import SvgIcon from '@jamescoyle/vue-icon'
 import { mdiAccount } from '@mdi/js'
 
 export default {
