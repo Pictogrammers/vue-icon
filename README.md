@@ -17,17 +17,17 @@ import SvgIcon from '[path-to-package]'
 import { mdiAccount } from '@mdi/js'
 
 export default {
-  name: "my-cool-component",
+	name: "my-cool-component",
 
 	components: {
 		SvgIcon
 	},
 
-  data() {
-	  return {
-		  path: mdiAccount,
-	  }
-  }
+  	data() {
+		return {
+			path: mdiAccount,
+	  	}
+  	}
 }
 </script>
 ```
