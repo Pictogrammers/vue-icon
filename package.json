@@ -1,41 +1,41 @@
 {
-  "name": "vue-icon",
-  "version": "1.0.0",
-  "description": "Icon component for Vue.js",
-  "main": "lib/icon.vue",
-  "directories": {
-    "lib": "lib",
-    "test": "tests"
-  },
-  "scripts": {
-    "test": "jest"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/JamesCoyle/vue-icon.git"
-  },
-  "keywords": [
-    "Vue",
-    "icon",
-    "mdi",
-    "pictogrammers"
-  ],
-  "author": "Pictogrammers, James Coyle",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/JamesCoyle/vue-icon/issues"
-  },
-  "homepage": "https://github.com/JamesCoyle/vue-icon#readme",
-  "devDependencies": {
-    "@babel/core": "^7.11.6",
-    "@babel/plugin-transform-runtime": "^7.11.5",
-    "@babel/preset-env": "^7.11.5",
-    "@vue/test-utils": "^1.1.0",
-    "babel-core": "^7.0.0-bridge.0",
-    "babel-jest": "^26.3.0",
-    "jest": "^26.4.2",
-    "vue": "^2.6.12",
-    "vue-jest": "^3.0.7",
-    "vue-template-compiler": "^2.6.12"
-  }
+	"name": "vue-icon",
+	"version": "1.0.0",
+	"description": "Icon component for Vue.js",
+	"main": "lib/svg-icon.vue",
+	"directories": {
+		"lib": "lib",
+		"test": "tests"
+	},
+	"scripts": {
+		"test": "jest"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/JamesCoyle/vue-icon.git"
+	},
+	"keywords": [
+		"Vue",
+		"icon",
+		"mdi",
+		"pictogrammers"
+	],
+	"author": "Pictogrammers, James Coyle",
+	"license": "MIT",
+	"bugs": {
+		"url": "https://github.com/JamesCoyle/vue-icon/issues"
+	},
+	"homepage": "https://github.com/JamesCoyle/vue-icon#readme",
+	"devDependencies": {
+		"@babel/core": "^7.11.6",
+		"@babel/plugin-transform-runtime": "^7.11.5",
+		"@babel/preset-env": "^7.11.5",
+		"@vue/test-utils": "^1.1.0",
+		"babel-core": "^7.0.0-bridge.0",
+		"babel-jest": "^26.3.0",
+		"jest": "^26.4.2",
+		"vue": "^2.6.12",
+		"vue-jest": "^3.0.7",
+		"vue-template-compiler": "^2.6.12"
+	}
 }
