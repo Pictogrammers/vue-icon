@@ -1,6 +1,6 @@
 import { describe, beforeEach, it, expect } from '@jest/globals'
 import { mount } from '@vue/test-utils'
-import VueIcon from './../lib/icon.vue'
+import VueIcon from './../lib/svg-icon.vue'
 
 const path = 'M 10 10 H 90 V 90 H 10 L 10 10'
 
