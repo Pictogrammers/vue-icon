@@ -1,9 +1,23 @@
 # Vue Icon Component
 
+[![](https://chips.james-coyle.now.sh/npm/version/@jamescoyle/vue-icon)](https://www.npmjs.com/package/@jamescoyle/vue-icon)
+[![](https://chips.james-coyle.now.sh/npm/downloads/@jamescoyle/vue-icon)](https://www.npmjs.com/package/@jamescoyle/vue-icon)
+
 An icon component which makes it easy to render SVG path based icons in any Vue project. Provides several helpful properties to manipulate the icon and supports any icon pack which provides icons as a single SVG path to be displayed on a square viewbox.
 
 # Usage
 
+1. Install from NPM
+   ```
+   npm install @jamescoyle/vue-icon
+   ```
+
+2. Import into your project
+   ``` 
+   import SvgIcon from '@jamescoyle/vue-icon'
+   ```
+
+## SFC Example
 The following example uses [@mdi/js](https://www.npmjs.com/package/@mdi/js) which provides a wide range of icon paths. It shows how you might use an icon within a single file component.
 
 ```
