@@ -36,7 +36,8 @@ export default {
 		viewbox: String,
 		flip: {
 			type: String,
-			validator: (value) => ["horizontal", "vertical", "both"].includes(value),
+			validator: (value) =>
+				["horizontal", "vertical", "both", "none"].includes(value),
 		},
 		rotate: { type: Number, default: 0 },
 	},
