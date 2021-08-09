@@ -32,7 +32,7 @@ export default {
 	props: {
 		type: String,
 		path: { type: String, required: true },
-		size: { type: Number, default: 24 },
+		size: { type: [String, Number], default: 24 },
 		viewbox: String,
 		flip: {
 			type: String,
